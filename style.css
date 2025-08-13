@@ -1,0 +1,92 @@
+* { box-sizing: border-box; }
+html, body { margin: 0; font-family: system-ui, Arial, sans-serif; }
+
+body.theme-a {
+  --bg: linear-gradient(180deg, #0b1020, #1c2a4a);
+  --card: #101933;
+  --text: #eef3ff;
+  --accent: #6ecbff;
+  --accent2: #a5f3fc;
+}
+body.theme-b {
+  --bg: linear-gradient(180deg, #1a1a1a, #383838);
+  --card: #232323;
+  --text: #f9f9f9;
+  --accent: #ffd166;
+  --accent2: #fca311;
+}
+
+body { background: var(--bg); color: var(--text); min-height: 100vh; }
+
+nav {
+  position: sticky; top: 0; z-index: 10;
+  display: flex; gap: 14px; align-items: center; justify-content: center;
+  padding: 12px 10px;
+  background: rgba(0,0,0,0.35);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+nav a {
+  color: var(--text); text-decoration: none; font-weight: 600;
+  padding: 6px 10px; border-radius: 8px;
+}
+nav a:hover { background: rgba(255,255,255,0.08); }
+#themeBtn {
+  margin-left: auto; margin-right: 8px;
+  border: 1px solid var(--accent);
+  background: transparent; color: var(--accent);
+  padding: 6px 10px; border-radius: 8px; cursor: pointer; font-weight: 700;
+}
+#themeBtn:hover { background: rgba(255,255,255,0.08); }
+
+.hero {
+  text-align: center; padding: 50px 16px 24px;
+}
+.hero h1 { margin: 0 0 10px; font-size: 42px; }
+
+.tip {
+  display: inline-block;
+  background: linear-gradient(90deg, var(--accent), var(--accent2));
+  color: #0b1020;
+  font-weight: 800; padding: 8px 12px; border-radius: 999px;
+  margin: 8px 0 16px;
+}
+
+.search-wrap { margin-top: 10px; }
+#search {
+  width: min(680px, 92%); padding: 10px 12px;
+  border-radius: 12px; border: 1px solid rgba(255,255,255,0.2);
+  background: rgba(255,255,255,0.08); color: var(--text); font-size: 16px;
+}
+
+.grid {
+  display: grid; gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  padding: 20px;
+  max-width: 1100px; margin: 0 auto;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 16px; overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.card:hover { transform: translateY(-4px); box-shadow: 0 10px 24px rgba(0,0,0,0.45); }
+
+.card img { width: 100%; height: 140px; object-fit: cover; display: block; }
+
+.card-body { padding: 12px; }
+.card-title { font-size: 18px; margin: 0 0 6px; font-weight: 800; color: var(--accent); }
+.card-meta { opacity: 0.9; font-size: 14px; margin-bottom: 8px; }
+.card-desc { font-size: 14px; line-height: 1.4; }
+
+.about {
+  padding: 28px 20px; max-width: 900px; margin: 0 auto 40px;
+}
+
+footer {
+  text-align: center; padding: 20px; opacity: 0.8;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
